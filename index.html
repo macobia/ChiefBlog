@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chief Blog</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+        
+</head>
+
+<body class="">
+    
+    <!-- Header Section -->
+    <section  class="header-section1 flex flex-col justify-start w-full">
+        <navbar class="bg-white fixed shadow-lg top- w-4/5 my-4 z-10 rounded-full bg-opacity-80 mx-auto">
+            <div class="container mx-auto flex items-center justify-between py-4 px-6">
+                <!-- Logo -->
+                <div class="flex items-center md:space-x-3">
+                    <img src="chiefblog1.jpeg" alt="Logo"
+                        class="lg:w-32 md:w-24 md:h-10 h-10 lg:h-20 w-20 rounded-full" />
+                    <span class="lg:text-lg font-semibold"><span class="text-red-600">C\</span>hief</span>
+                </div>
+
+                <!-- Navigation Links
+                <nav class="hidden m md:flex space-x-5 text-gray-700 ">
+                    <a href="#" class="hover:text-blue-500 lg:text-2xl">Entertainment</a>
+                    <a href="#" class="hover:text-blue-500 lg:text-2xl">Technology</a>
+                    <a href="#" class="hover:text-blue-500 lg:text-2xl">Sports</a>
+                    <a href="#" class="hover:text-blue-500 lg:text-2xl">AI</a>
+                    <a href="#" class="hover:text-blue-500 lg:text-2xl">Games</a>
+                </nav> -->
+                <div class="slogan">
+                    <span> </span><span class="highlight">Your ultimate source for tech insights, trends, and digital innovation.</span>
+                </div>
+
+                <!-- Join Button -->
+                <button
+                    onclick="navigateToLoginPage()"
+                    class="bg-blue-600 text-white md:ml-2 px-4 py-2 rounded-full hover:bg-green-700 lg:h-20 md-h-8 lg:w-40 lg:text-xl md-text-sm font-bold">
+                    Join Us
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="hamburger" class="md:hidden">
+                    <i class="ri-menu-5-line"></i>
+                </button>
+            </div>
+        </navbar>
+        <div id="mobile-menu" class="md:hidden bg-white text-black p-4 w-full opacity-55">
+            <a href="#" class="block py-2 hover:bg-gray-800 hover:text-white">Entertainment</a>
+            <a href="#" class="block py-2 hover:bg-gray-800 hover:text-white">Technology</a>
+            <a href="#" class="block py-2 hover:bg-gray-800 hover:text-white">Sports</a>
+            <a href="#" class="block py-2 hover:bg-gray-800 hover:text-white">AI</a>
+            <a href="#" class="block py-2 hover:bg-gray-800 hover:text-white">Games</a>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center bg-cover bg-center w-full">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+
+            <!-- Content -->
+            <div class="relative text-center text-white px-6 mt-3">
+                <h1 class="font-bold mb-4 text-red-600 leading-10 text-4xl md:text-8xl">
+                    Chief Blog
+                </h1>
+                <p class="md:text-2xl text-lg md:mt-12 md:mb-8 mt-4 mb-4">
+                    Dive into the wild world of Entertainment, Tech, Sports and AI!
+                </p>
+                <button 
+                onclick="navigateToLoginPage()"
+                    class="bg-transparent border border-white text-white px-6 py-3 rounded-full hover:text-gray-200 md:h-20 md:w-48 md:text-2xl">
+                    Get Started
+                </button>
+            </div>
+        </section>
+    </section>
+
+    <!-- <script src="main.js"></script> -->
+    <script>
+        function navigateToLoginPage() {
+            window.location.href = 'login.html';  // Redirect to about.html
+        }
+    </script>
+</body>
+
+</html>

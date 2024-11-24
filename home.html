@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+     <!-- Navbar -->
+     <header class="bg-white shadow mb-5">
+        <div class="container mx-auto flex items-center justify-between px-4 py-3">
+            <!-- Search -->
+            <div class="flex items-center space-x-4">
+                <!-- Search bar -->
+                <div class="block relative">
+                    <input type="text" id="search" placeholder="Search" oninput="filterPosts()"
+                        class="pl-8 pr-4 py-1 rounded-full border border-none bg-gray-50 focus:outline-none h-10" />
+
+                    <span class="absolute left-2 top-2 text-gray-500">
+                        <i class="ri-search-line"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right Side Buttons -->
+            <div class="flex items-center space-x-4">
+                <!-- Icons -->
+                <div class="flex items-center space-x-8">
+                    <button class="hover:text-blue-600">
+                        <i class="ri-edit-line"></i> Write
+                    </button>
+                    <!-- Toggle Mode Button -->
+                    <button id="mode-toggle" class="bg-gray-600 text-white px-4 py-2 rounded-full hover:bg-gray-500">
+                      <i class="ri-toggle-line"></i>
+                    </button>
+
+                    <!-- <button class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center">A</button> -->
+                </div>
+
+                <!-- Mobile Menu Button -->
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+    </header>
+
+    <!-- Header Section -->
+    <section class="header-section flex flex-col justify-start w-full">
+        <navbar class="bg-white fixed shadow-lg top- w-4/5 my-4 z-10 rounded-full bg-opacity-80 mx-auto">
+            <div class="container mx-auto flex items-center justify-between py-4 px-6">
+                <!-- Logo -->
+                <div class="flex items-center md:space-x-3">
+                    <img src="chiefblog1.jpeg" alt="Logo"
+                        class="lg:w-32 md:w-24 md:h-10 h-10 lg:h-20 w-10 rounded-full" />
+                    <span class="lg:text-lg font-semibold"><span class="text-red-600">C\</span>hief</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-5 text-gray-700 ">
+                    <a href="home.html" class="hover:text-blue-500 lg:text-2xl">HOME</a>
+                    <a href="blog.html" class="hover:text-blue-500 lg:text-2xl">BLOG</a>
+                    <a href="about.html" class="hover:text-blue-500 lg:text-2xl">ABOUT</a>
+                    <a href="contact.html" class="hover:text-blue-500 lg:text-2xl">CONTACT</a>
+                    <a href="game.html" class="hover:text-blue-500 lg:text-2xl">GAMES</a>
+                </nav>
+
+                <!-- Log out Button -->
+                <button
+                    onclick="logout()"
+                    class=" hidden md:block bg-blue-600 text-white md:ml-2 px-4 py-2 rounded-full hover:bg-red-700 lg:h-20 md-h-8 lg:w-40 lg:text-xl md-text-sm font-bold">
+                    Log Out
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="hamburger" class="md:hidden text-black">
+                    <i class="ri-menu-5-line"></i>
+                </button>
+            </div>
+        </navbar>
+        <div id="mobile-menu"  class="md:hidden rounded-3xl fixed bg-white text-black p-4 mt-20 mb-28  w-4/5 opacity-55 ">
+            <a href="home.html" class="block py-2 hover:bg-gray-800 hover:text-white">HOME</a>
+            <a href="blog.html" class="block py-2 hover:bg-gray-800 hover:text-white">BLOG</a>
+            <a href="about.html" class="block py-2 hover:bg-gray-800 hover:text-white">ABOUT</a>
+            <a href="contact" class="block py-2 hover:bg-gray-800 hover:text-white">CONTACT</a>
+            <a href="game.html" class="block py-2 hover:bg-gray-800 hover:text-white">GAMES</a>
+            <button
+            onclick="logout()"
+            class=" md:hidden bg-blue-600 text-white md:ml-2 px-4 py-2 rounded-full hover:bg-red-700 lg:h-20 md-h-8 lg:w-40 lg:text-xl md-text-sm font-bold">
+            Log Out
+        </button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center bg-cover bg-center w-full">
+            <!-- Overlay -->
+            <div class="absolute  bg-black opacity-40"></div>
+
+            <!-- Content -->
+            <div class="relative text-center text-white px-6 mt-3">
+                <h1 class="font-bold mb-4 text-red-600 leading-10 text-4xl md:text-8xl">
+                    Chief Blog
+                </h1>
+                <p class="md:text-2xl text-lg md:mt-12 md:mb-8 mt-4 mb-4">
+                    Dive into the wild world of Entertainment, Tech, Sports and AI!
+                </p>
+                <button 
+                onclick="navigateToPage()"
+                    class="bg-transparent border border-white text-white px-6 py-3 rounded-full hover:text-gray-200 md:h-20 md:w-48 md:text-2xl">
+                    Get Started
+                </button>
+            </div>
+        </section>
+    </section>
+
+
+    <!-- section 1  -->
+
+    <div class=" section1 bg-pink-100 py-12 px-6 text-center">
+        <h1 class="text-5xl font-bold mb-4 mt-16">Cheers!</h1>
+        <p class="text-xl text-gray-600 mb-8">What our users are raving about!</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="flex flex-col items-center">
+            <div class="flex space-x-1 mb-4">
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+            </div>
+            <p class="text-gray-800 text-lg mb-4">This blog is my daily dose of entertainment!</p>
+            <h3 class="text-gray-700 font-medium">Alex Johnson</h3>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="flex flex-col items-center">
+            <div class="flex space-x-1 mb-4">
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+            </div>
+            <p class="text-gray-800 text-lg mb-4">I love the tech insights and sports updates!</p>
+            <h3 class="text-gray-700 font-medium">Maria Garcia</h3>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="flex flex-col items-center">
+            <div class="flex space-x-1 mb-4">
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+              <span class="text-green-500 text-2xl">&#9733;</span>
+            </div>
+            <p class="text-gray-800 text-lg mb-4">Chief Blog keeps me informed and entertained!</p>
+            <h3 class="text-gray-700 font-medium">David Lee</h3>
+          </div>
+        </div>
+        <button class="mt-8 bg-blue-600 text-white px-6 py-2 rounded-3xl hover:bg-green-700"  onclick="navigateToPage()">
+          Explore our Blog
+        </button>
+      </div>
+      
+
+ <!-- Blog section on home page -->
+
+
+ <section class="section2 flex flex-col justify-center">
+    <h1 class="font-bold text-5xl text-center mt-6">Explore our Blog Section</h1>
+
+    <div class="filters hidden">
+        <input type="text" id="search" placeholder="Search by title" oninput="filterPosts()">
+        <select id="categoryFilter" onchange="filterPosts()">
+            <option value="">All Categories</option>
+            <option value="Sports">Sports</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="AI">AI</option>
+            <option value="Technology">Technology</option>
+        </select>
+    </div>
+
+    <div id="postsContainer"></div>
+    <div class="pagination hidden" id="pagination"></div>
+
+    <div id="smartScreen">
+        <span class="close-btn" onclick="closeSmartScreen()">×</span>
+        <div id="smartScreenContent"></div>
+    </div>
+</section>
+
+<!-- section 3, connect with us -->
+
+<div class=" stay-connected flex flex-col items-center space-y-4 py-8 mt-40 mb-4 bg-white h-72">
+    <!-- Heading -->
+    <h2 class="md:text-6xl text-4xl font-bold text-gray-800">Stay Connected With Us</h2>
+    
+    <!-- Social Media Icons -->
+    <div class="flex space-x-4">
+      <!-- Facebook -->
+      <a href="#" class=" flex items-center justify-center w-12 h-12  bg-blue-600 text-white rounded-full hover:bg-blue-700">
+        <i class="ri-facebook-line text-4xl"></i>
+      </a>
+      <!-- X (Twitter) -->
+      <a href="#" class="flex items-center justify-center w-12 h-12 bg-sky-500 text-white rounded-full hover:bg-sky-600">
+        <i class="ri-twitter-x-fill text-4xl " ></i>
+      </a>
+      <!-- Instagram -->
+      <a href="#" class="flex items-center justify-center w-12 h-12 bg-pink-500 text-white rounded-full hover:bg-pink-600">
+        <i class="ri-instagram-line text-4xl "></i>
+      </a>
+      <!-- Linkedln -->
+      <a href="#" class="flex items-center justify-center w-12 h-12 bg-black text-white rounded-full hover:bg-gray-800">
+        <i class="ri-linkedin-box-line text-4xl "></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- section 4 Get in touch -->
+   <section class=" get-in-touch bg-pink-100 flex items-center justify-center min-h-96">
+    <div class="w-full max-w-2xl p-6 rounded-lg shadow-md">
+        <h1 class="text-5xl font-bold text-center mb-6">Get in Touch</h1>
+        <form id="contactForm" class="space-y-4">
+            <div class=" flex gap-4 flex-row">
+          <input
+            type="text"
+            id="name"
+            placeholder="Name"
+            class="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-full"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            class="w-full p-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-400  rounded-full "
+            required
+          />
+        </div>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone"
+            class="w-full p-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-400  rounded-full"
+            required
+          />
+          <textarea
+            id="message"
+            placeholder="Message"
+            class="w-full h-14 p-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-blue-400  rounded-full"
+            rows="4"
+            required
+          ></textarea>
+          <div class="flex justify-center">
+          <button
+            type="submit"
+            class="w-24 h-14 bg-blue-500 text-white p-4  hover:bg-blue-600 transition  rounded-full"
+          >
+            Send It!
+          </button>
+        </div>
+        </form>
+      </div>
+   </section>
+
+
+
+   <!-- Footer Section -->
+<section class="bg-gray-100">
+
+ 
+    <footer class="bg-gray-900 text-black py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl text-white font-semibold mb-4">Subscribe to Chief-Blog Newsletter</h2>
+
+            <!-- Newsletter Signup Form -->
+            <form id="newsletterForm" onsubmit="saveData(event)" class="bg-white p-6 rounded-lg shadow-lg w-full sm:w-96 mx-auto mb-6">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name:</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div class="mb-4">
+                    <label for="interest" class="block text-gray-700 font-semibold mb-2">Interest:</label>
+                    <select id="interest" name="interest" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="" disabled selected>Select your interest</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="AI">AI</option>
+                    </select>
+                </div>
+
+                <button type="submit"
+                    class="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-green-600 transition duration-300">Subscribe</button>
+            </form>
+
+            <p id="successMessage" class="text-green-500 font-semibold mb-4 hidden">Thank you for subscribing!</p>
+
+            <!-- Footer Links and Social Media -->
+            <div class="text-sm mb-4">
+                <a href="privacy.html" class="text-gray-300 hover:text-white mx-2">Privacy Policy</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-white mx-2">Terms of Service</a>
+            </div>
+
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-facebook-circle-fill"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-instagram-fill"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-twitter-x-fill"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-linkedin-box-fill"></i>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-gray-500 mt-6">&copy; 2024 Chief-Blog. All rights reserved.</p>
+        </div>
+    </footer>
+   </section>
+   
+     <script src="main.js"></script>
+</body>
+</html>

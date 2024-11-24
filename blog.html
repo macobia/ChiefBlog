@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+    <section class="header-section flex flex-col justify-start w-full">
+        <navbar class="bg-white  shadow-lg top- w-4/5 my-4 z-10 rounded-full bg-opacity-80 mx-auto">
+            <div class="container mx-auto flex items-center justify-between py-4 px-6">
+                <!-- Logo -->
+                <div class="flex items-center md:space-x-3">
+                    <img src="chiefblog1.jpeg" alt="Logo"
+                        class="lg:w-32 md:w-24 md:h-10 h-10 lg:h-20 w-10  rounded-full" />
+                    <span class="lg:text-lg font-semibold"><span class="text-red-600">C\</span>hief</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-5 text-gray-700 ">
+                    <a href="home.html" class="hover:text-blue-500 lg:text-2xl">HOME</a>
+                    <a href="blog.html" class="hover:text-blue-500 lg:text-2xl">BLOG</a>
+                    <a href="about.html" class="hover:text-blue-500 lg:text-2xl">ABOUT</a>
+                    <a href="contact.html" class="hover:text-blue-500 lg:text-2xl">CONTACT</a>
+                    <a href="game.html" class="hover:text-blue-500 lg:text-2xl">GAMES</a>
+                </nav>
+
+                <!-- Log out Button -->
+                <button
+                    onclick="logout()"
+                    class=" hidden md:block bg-blue-600 text-white md:ml-2 px-4 py-2 rounded-full hover:bg-red-700 lg:h-20 md-h-8 lg:w-40 lg:text-xl md-text-sm font-bold">
+                    Log Out
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="hamburger" class="md:hidden text-black">
+                    <i class="ri-menu-5-line"></i>
+                </button>
+            </div>
+        </navbar>
+        <div id="mobile-menu"  class="md:hidden rounded-3xl  bg-white text-black p-4 mt-20 mb-28  w-4/5 opacity-55 ">
+            <a href="home.html" class="block py-2 hover:bg-gray-800 hover:text-white">HOME</a>
+            <a href="blog.html" class="block py-2 hover:bg-gray-800 hover:text-white">BLOG</a>
+            <a href="about.html" class="block py-2 hover:bg-gray-800 hover:text-white">ABOUT</a>
+            <a href="contact.html" class="block py-2 hover:bg-gray-800 hover:text-white">CONTACT</a>
+            <a href="game.html" class="block py-2 hover:bg-gray-800 hover:text-white">GAMES</a>
+            <button
+            onclick="logout()"
+            class=" md:hidden bg-blue-600 text-white md:ml-2 px-4 py-2 rounded-full hover:bg-red-700 lg:h-20 md-h-8 lg:w-40 lg:text-xl md-text-sm font-bold">
+            Log Out
+        </button>
+        </div>
+    </section>
+
+    
+<div class="header">
+    
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search...">
+    </div>
+    <div class="filter">
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Technology">Technology</option>
+            <option value="Sports">Sports</option>
+            <option value="AI">AI</option>
+        </select>
+        <select id="sortFilter">
+            <option value="latest">Latest</option>
+            <option value="popular">Most Popular</option>
+        </select>
+    </div>
+    <button id="mode-toggle" class="bg-gray-600 text-white px-4 py-2 rounded-full hover:bg-gray-500">
+        <i class="ri-toggle-line"></i>
+    </button>
+</div>
+
+<div id="postsContainer" class="content"></div>
+
+<!-- <div class="load-more">
+    <button id="loadMoreBtn">Load More</button>
+</div> -->
+
+<div id="smartScreen" class="smart-screen">
+    <button class="close-btn" onclick="closeSmartScreen()">X</button>
+    <div class="content">
+        <div id="postDetails"></div>
+        <br><br>
+        <div>
+            <!-- <input type="text" id="commentText" placeholder="Add a comment..."> -->
+            <!-- <button onclick="addComment()">Add Comment</button> -->
+            <div id="commentsList"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="blog.js"></script>
+</body>
+</html>

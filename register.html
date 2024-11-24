@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black p-auto text-white flex flex-col items-center justify-center  h-screen">
+
+    <div class=" w-fit flex flex-col justify-center items-center">
+        <img src="chiefblog1.jpeg" class="h-20   w-32" alt="">
+        <h2 class="text-xl font-bold">Unlock a world of insights with trending topics in tech, AI, sports, and entertainment.</h2>
+        <h3 class="text-xl font-bold"> Dive into knowledge daily!</h3>
+    </div>
+
+    <div class="register-container text-lg p-10 border border-solid border-white m-4 ">
+        <div class="flex justify-center mb-16">
+            <h1 class="text-5xl font-bold">Sign Up</h1>
+        </div>
+        <form action="" id="registerForm" novalidate class="">
+            <div class="input-group m-5 flex flex-col" >
+                <label for="full-name" class="pb-1">Full Name</label>
+                <input type="text" id="full-name" class="bg-black " placeholder="Enter Your Full-name">
+            </div>
+            <div class="input-group m-5 flex flex-col">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="bg-black " placeholder="name@email.com">
+            </div>
+            <div class="input-group m-5 flex flex-col">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="bg-black " placeholder="Create Password">
+            </div>
+            <div class="input-group m-5 flex flex-col">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" class="bg-black " placeholder="Confirm Your Password">
+            </div>
+
+            <p class="error-message" id="registerError"></p>
+
+            <div class="flex items-center justify-center mt-10 mb-2">
+                <button type="submit"
+                    class="border border-white rounded-full bg-white text-black w-52 font-light hover:text-white hover:bg-black ">AGREE
+                    AND SIGN UP</button>
+            </div>
+            <p>Already have an account? <a href="login.html" class="hover:text-red-400 text-blue-400">Login</a></p>
+
+        </form>
+
+        <p>By signing up, you are agreeing to our <a href="privacy.html" class="text-blue-400 hover:text-red-400">Privacy Policy</a></p>
+    </div>
+
+
+
+    <script src="auth.js"></script>
+
+</body>
+
+</html>

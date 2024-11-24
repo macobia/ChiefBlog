@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <h1>Memory Match Game</h1>
+    <div id="score">Score: 0</div>
+    <div id="timer">Time: 15s</div>
+    <div class="game-container" id="gameContainer"></div>
+    <p id="congratulations">Congratulations! You matched all pairs!</p>
+    <p id="gameOver">Game Over! Try again.</p>
+    <button id="restartBtn" onclick="restartGame()">Restart</button>
+
+    <button 
+    onclick="goBack()" 
+    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+    Go to Home Page
+  </button>
+
+
+    <script src="game.js"></script>
+</body>
+</html>

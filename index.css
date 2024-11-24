@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    overflow: hidden;
+}
+
+.slogan {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeIn 3s ease-out 1s forwards, slideIn 2.5s ease-out 0s forwards;
+}
+.header-section1{
+    background: url(chiefblog3.jpg) no-repeat center/cover;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Sliding effect from left to right */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Animated text highlight */
+.highlight {
+    color: #4CAF50;
+    animation: highlight 2s infinite alternate;
+}
+
+@keyframes highlight {
+    0% {
+        color: #4CAF50;
+    }
+    100% {
+        color: #FFC107;
+    }
+}

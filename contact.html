@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+
+
+    <section class="header-section flex flex-col justify-start w-full">
+        <navbar class="bg-white  shadow-lg top- w-4/5 my-4 z-10 rounded-full bg-opacity-80 mx-auto">
+            <div class="container mx-auto flex items-center justify-between py-4 px-6">
+                <!-- Logo -->
+                <div class="flex items-center md:space-x-3">
+                    <img src="chiefblog1.jpeg" alt="Logo"
+                        class="lg:w-32 md:w-24 md:h-10 h-10 lg:h-20 w-10  rounded-full" />
+                    <span class="lg:text-lg font-semibold"><span class="text-red-600">C\</span>hief</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-5 text-gray-700 ">
+                    <a href="home.html" class="hover:text-blue-500 lg:text-2xl">HOME</a>
+                    <a href="blog.html" class="hover:text-blue-500 lg:text-2xl">BLOG</a>
+                    <a href="about.html" class="hover:text-blue-500 lg:text-2xl">ABOUT</a>
+                    <a href="contact.html" class="hover:text-blue-500 lg:text-2xl">CONTACT</a>
+                    <a href="game.html" class="hover:text-blue-500 lg:text-2xl">GAMES</a>
+                </nav>
+
+                <!-- Log out Button -->
+                <button onclick="logout()"
+                    class=" hidden md:block bg-blue-600 text-white md:ml-2 px-4 py-2 rounded-full hover:bg-red-700 lg:h-20 md-h-8 lg:w-40 lg:text-xl md-text-sm font-bold">
+                    Log Out
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="hamburger" class="md:hidden text-black">
+                    <i class="ri-menu-5-line"></i>
+                </button>
+            </div>
+        </navbar>
+        <div id="mobile-menu" class="md:hidden rounded-3xl  bg-white text-black p-4 mt-20 mb-28  w-4/5 opacity-55 ">
+            <a href="home.html" class="block py-2 hover:bg-gray-800 hover:text-white">HOME</a>
+            <a href="blog.html" class="block py-2 hover:bg-gray-800 hover:text-white">BLOG</a>
+            <a href="about.html" class="block py-2 hover:bg-gray-800 hover:text-white">ABOUT</a>
+            <a href="contact.html" class="block py-2 hover:bg-gray-800 hover:text-white">CONTACT</a>
+            <a href="game.html" class="block py-2 hover:bg-gray-800 hover:text-white">GAMES</a>
+            <button onclick="logout()"
+                class=" md:hidden bg-blue-600 text-white md:ml-2 px-4 py-2 rounded-full hover:bg-red-700 lg:h-20 md-h-8 lg:w-40 lg:text-xl md-text-sm font-bold">
+                Log Out
+            </button>
+        </div>
+    </section>
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <h1 class="text-center text-3xl font-bold">Contact Us</h1>
+    <p class="text-center mt-2">We'd love to hear from you!</p>
+  </header>
+
+  <!-- Contact Form Section -->
+  <section class="container mx-auto mt-10 px-4">
+    <div class="bg-white shadow-md rounded-lg p-8 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Get In Touch</h2>
+      <form id="contactForm1">
+        <!-- Name -->
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            required
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            required
+          />
+        </div>
+
+        <!-- Message -->
+        <div class="mb-6">
+          <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-600 focus:outline-none"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <section class="bg-gray-100">
+
+
+    <footer class="bg-gray-900 text-black py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl text-white font-semibold mb-4">Subscribe to Chief-Blog Newsletter</h2>
+
+            <!-- Newsletter Signup Form -->
+            <form id="newsletterForm" onsubmit="saveData(event)"
+                class="bg-white p-6 rounded-lg shadow-lg w-full sm:w-96 mx-auto mb-6">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name:</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div class="mb-4">
+                    <label for="interest" class="block text-gray-700 font-semibold mb-2">Interest:</label>
+                    <select id="interest" name="interest" required
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="" disabled selected>Select your interest</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="AI">AI</option>
+                    </select>
+                </div>
+
+                <button type="submit"
+                    class="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-green-600 transition duration-300">Subscribe</button>
+            </form>
+
+            <p id="successMessage" class="text-green-500 font-semibold mb-4 hidden">Thank you for subscribing!</p>
+
+            <!-- Footer Links and Social Media -->
+            <div class="text-sm mb-4">
+                <a href="privacy.html" class="text-gray-300 hover:text-white mx-2">Privacy Policy</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-300 hover:text-white mx-2">Terms of Service</a>
+            </div>
+
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-facebook-circle-fill"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-instagram-fill"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-twitter-x-fill"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white">
+                    <i class="ri-linkedin-box-fill"></i>
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-gray-500 mt-6">&copy; 2024 Chief-Blog. All rights reserved.</p>
+        </div>
+    </footer>
+</section>
+
+  <!-- JavaScript -->
+  <script src="contact.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

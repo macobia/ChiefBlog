@@ -1,0 +1,252 @@
+body{
+    padding: 0%;
+    margin: 0%;
+    /* overflow: hidden; */
+    height: 100vh;
+    /* background-color: #FFF; */
+
+}
+
+
+
+.header-section{
+    background: url(image123.jpg) no-repeat center/cover;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+/* Light Mode (default mode) */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #202620;
+    color: #ffffff;
+}
+body.dark-mode p{
+    background-color: #202620;
+    color: #ffffff;
+}
+body.dark-mode > .section2 {
+    background-color:#2a2e2c;
+    color: #ffffff;
+    
+}
+
+/* Header Section */
+header {
+    background-color: white;
+}
+
+/* Dark Mode Header */
+body.dark-mode header {
+    background-color: #202620;
+}
+
+/* Button Styles */
+/* button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #444;
+} */
+
+/* Dark Mode Button Styles */
+/* body.dark-mode button {
+    background-color: #555;
+    color: white;
+}
+
+body.dark-mode button:hover {
+    background-color: #777;
+} */
+
+/* Hero Section */
+.hero-section {
+    background-color: #eeeeee;
+}
+
+/* Dark Mode Hero Section */
+body.dark-mode .hero-section {
+    background-color:#202620;
+}
+
+body.dark-mode .section1{
+    background-color: #202620;  
+    color: #fff; 
+}
+
+body.dark-mode .stay-connected{
+    background-color:#2a2e2c;
+    color: #ffffff;
+
+}
+body.dark-mode .stay-connected h2{
+    background-color:#2a2e2c;
+    color: #ffffff;
+
+}
+body.dark-mode .get-in-touch{
+    background-color:#202620;
+    color: #ffffff;
+
+}
+body.dark-mode h3{
+    color: #ffffff;
+}
+
+/* blog1 styling */
+
+.content {
+    line-height: 1.8; 
+    word-wrap: break-word; /* Ensures long words break properly */
+    font-size: 1.1em; /* Slightly larger font size for better readability */
+    padding: 15px; /* Add padding around content */
+    margin-top: 15px; /* Adds some space above the content */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; 
+    color: #333; 
+    width: fit-content;
+}
+
+#smartScreen {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 98%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: black;
+    overflow: auto;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.comments-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: black;
+}
+
+#postsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    justify-content: flex-start; 
+    /* background-color: ; */
+}
+
+.post {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 50%;
+    margin-left: 20px;
+}
+
+
+/* image, title, author styling */
+.json-image{
+    height: 300px;
+    width: 380px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.json-image:hover{
+    height: 310px;
+    width: 390px;
+    color: #ddd;
+}
+.json-cathegory {
+    line-height: 25px;
+    font-size: larger;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.json-author {
+    display: none;
+}
+.json-title{
+    font-size: 25px;
+    width: 100%;
+    text-wrap: wrap;
+    font-weight: 800;
+    line-height: 45px;
+}
+.share-json{
+    font-size: large;
+    font-weight: 500;
+
+}
+.share-json:hover{
+    font-weight: 400;
+}
+.commentButton{
+    display: none;
+}
+.json-read{
+    text-align: center;
+    color: black;
+    width: 25px;
+    background-color:  #2563EB;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    color: #ddd;
+    margin-top: 20px;
+}
+
+.json-read:hover{
+    background-color: green;
+
+}
+@media (max-width: 768px) {
+    #postsContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Makes posts full width on smaller screens */
+    }
+    
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black p-auto text-white flex flex-col items-center justify-center  h-screen">
+
+    <div class=" w-fit flex flex-col justify-center items-center">
+        <img src="chiefblog1.jpeg" class="h-20   w-32" alt="">
+        <h2 class="text-4xl font-bold">Welcome back! 😊 </h2>
+    </div>
+
+    <div class="register-container text-lg p-10 border border-solid border-white m-4 ">
+        <div class="flex justify-center mb-16">
+            <h1 class="text-5xl font-bold">Log In</h1>
+        </div>
+        <form action="" id="loginForm" novalidate class="">
+
+            <div class="input-group m-5 flex flex-col">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" class="bg-black " placeholder="name@email.com">
+            </div>
+            <div class="input-group m-5 flex flex-col">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" class="bg-black " placeholder="Password">
+            </div>
+
+            <p class="error-message text-red-600" id="loginError"></p>
+
+            <div class="flex items-center justify-center mt-10 mb-2">
+                <button type="submit"
+                    class="border border-white rounded-full bg-white text-black w-52 font-light hover:text-white hover:bg-black ">Log In</button>
+            </div>
+            <p>Don't have an account? <a href="register.html" class="hover:text-red-400 text-blue-400">Sign up</a></p>
+
+        </form>
+
+        <a href="#" class="text-blue-400 hover:text-red-400">Forgot Password?</a>
+    </div>
+
+    <div id="blog-feed"></div>
+
+
+
+    <script src="auth.js"></script>
+
+</body>
+
+</html>

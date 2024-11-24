@@ -1,0 +1,161 @@
+/* Basic Styles for the Blog */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.header {
+    background-color: #fbdde8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+.post-card {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fbdde8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.post-card img {
+    width: 100%;
+    height: 320px;
+}
+.post-card img:hover {
+    width: 98%;
+}
+.post-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.json-video{
+    width: 100%;
+    height: 320px;
+}
+.smart-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    overflow: auto;
+}
+.smart-screen .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+.smart-screen .content {
+    max-width: 800px;
+    margin: auto;
+}
+.search-bar, .filter {
+    padding: 10px;
+    margin: 10px 0;
+}
+#commentText{
+    color: black;
+}
+
+/* Styling for the share options */
+.shareOptions {
+    display: none; /* Hidden by default */
+    position: absolute; 
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+}
+
+.shareOptions a {
+    display: inline; 
+    padding: 5px 0;
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.shareOptions a:hover {
+    color: #005bb5; 
+}
+
+/* Adjust the share button container to have relative positioning */
+.shareBtnContainer {
+    position: relative;
+}
+
+/* Show the share options on hover */
+.shareBtnContainer:hover .shareOptions {
+    display: block;
+}
+
+/* dark mode styling */
+body.dark-mode {
+    background-color: #202620;
+    color: #ffffff;
+}
+body.dark-mode p{
+    background-color: #202620;
+    color: #ffffff;
+}
+body.dark-mode .post-card {
+    background-color: #2a2e2c;
+    color: #ffffff;
+}
+body.dark-mode .header  {
+    background-color: #2a2e2c;
+    color: #ffffff;
+}
+body.dark-mode .header .filter  {
+    background-color: #2a2e2c;
+    color: black;
+}
+body.dark-mode .post-card p{
+    background-color: #2a2e2c;
+    color: #ffffff;
+}
+
+
+/* Media query for smaller screens (mobile view) */
+@media (max-width: 768px) {
+    .post-card {
+        width: 100%; 
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .header {
+        font-size: 18px;
+    }
+
+    .smart-screen .content {
+        max-width: 100%; 
+        margin: 0;
+    }
+    
+
+}
+
+/* Styled by macben */
